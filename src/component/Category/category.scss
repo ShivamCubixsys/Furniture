@@ -1,0 +1,112 @@
+.main-category{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    place-items: center;
+    display: grid;
+    margin: 3rem 0;
+    grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+    .card{
+        margin-bottom: 10px;
+        height: 300px;
+        width: 300px;
+        .card-img{
+            height: 400px;
+            width: 300px;
+            
+        }
+
+        .card-img:hover{
+            webkit-transform: scale(0.8);
+-ms-transform: scale(0.8);
+transform: scale(0.8);
+transition: 1s ease;
+-webkit-transform: rotateZ(-10deg);
+-ms-transform: rotateZ(-10deg);
+transform: rotateZ(-10deg);
+        }
+    
+    }
+}
+
+@media screen and (max-width:400px) {
+    .main-category{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        place-items: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+        .card{
+            
+        }
+    }
+}
+
+
+@media (min-width:401px) and (max-width:580px) {
+    .main-category{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        place-items: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+      .card{
+        margin-bottom: 10px;
+        height: 250px;
+        width: 200px;
+        .card-img{
+            height: 250px;
+            width: 200px;
+        }
+    }
+    }
+}
+
+@media (min-width:581px) and (max-width:768px) {
+    .main-category{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        place-items: center;
+        display: grid;
+    
+        grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      .card{
+        margin-bottom: 10px;
+        height: 250px;
+        width: 200px;
+        .card-img{
+            height: 250px;
+            width: 200px;
+        }
+    }
+    }
+}
+
+// @media screen and (min-width:2000px) {
+//     .main-category{
+//         align-items: center;
+//         justify-content: center;
+//         text-align: center;
+//         place-items: center;
+//         display: grid;
+       
+//         grid-template-columns: repeat(3, 1fr);
+//       gap: 10px;
+//       .card{
+//         margin-bottom: 10px;
+//         height: 300px;
+//         width: 300px;
+//         .card-img{
+//             height: 400px;
+//             width: 300px;
+//         }
+//     }
+//     }
+// }
