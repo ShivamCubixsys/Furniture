@@ -46,7 +46,7 @@ const Category = () => {
             {
                 catList.map((item,index) => {
                     return(
-                       <Link to={`${item.para}`} style={{textDecoration:"none"}}>
+                       <Link to={{ pathname:`${item.para}`}} state={{data:item}} style={{textDecoration:"none"}}>
                         <Card className='card'>
                         <Card.Img variant="top" src={item.img} className='card-img' />
                         <Card.Body>
@@ -58,9 +58,6 @@ const Category = () => {
                 })
             }
         </div>
-        <Routes>
-       
-      </Routes>
     </div>
   )
 }

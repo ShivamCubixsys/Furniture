@@ -15,81 +15,83 @@ function Navibar() {
 
 
   const [navBackground, setNavBackground] = useState(false)
-  const [isSearch,setIsSearch] = useState(false);
-    const navRef = useRef()
-    const [value,setValue] = useState('')
-    navRef.current = navBackground
-    useEffect(() => {
-      const handleScroll = () => {
-        const show = window.scrollY > 50
-        if (navRef.current !== show) {
-          setNavBackground(show)
-        }
+  const [isSearch, setIsSearch] = useState(false);
+  const navRef = useRef()
+  const [value, setValue] = useState('')
+  navRef.current = navBackground
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 50
+      if (navRef.current !== show) {
+        setNavBackground(show)
       }
-      document.addEventListener('scroll', handleScroll)
-      return () => {
-        document.removeEventListener('scroll', handleScroll)
-      }
-    }, [])
+    }
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
-    <Navbar expand="lg" className='navbarData' fixed='top' variant='dark'  collapseOnSelect style={{ transition: '1s ease',backgroundColor: navBackground ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.3)'}}>   
-        <Container>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link href="sofas"  >Sofas</Nav.Link>
-          <Nav.Link href="beds">Beds</Nav.Link>
-          <Nav.Link href="chair">Chair</Nav.Link> 
-          <Nav.Link href="corner-sofas">Corner Sofas</Nav.Link>
-        </Nav>
-           <Navbar.Brand href="/">My-Furniture</Navbar.Brand>
-      </Navbar.Collapse>
-      <Navbar.Collapse className="justify-content-end">
-      
+    <Navbar expand="lg" className='navbarData' fixed='top' variant='dark' collapseOnSelect style={{ transition: '1s ease', backgroundColor: navBackground ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.3)' }}>
+      <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="sofas">Sofas</Nav.Link>
+            <Nav.Link href="beds">Beds</Nav.Link>
+            <Nav.Link href="chair">Chair</Nav.Link>
+            <Nav.Link href="corner-sofas"  >Corner Sofas</Nav.Link>
+          </Nav>
+          <Navbar.Brand href="/">My-Furniture</Navbar.Brand>
+        </Navbar.Collapse>
+        <Navbar.Collapse className="justify-content-end">
+
           <Nav.Link>
-          {
-          isSearch  ? 
-          <div style={{backgroundColor:"white", borderRadius:"10px"}}>
-              <Form className='d-flex border-0' style={{alignItems: 'center',
-            justifyContent: 'center', border:'none'}} onChange={()=>{
-            }}>
-              
-          <Form.Control
-          type="text"
-          placeholder="Search"
-          className="flex-grow cursor-pointer border-0"
-          aria-label="Search"
-        />
-          <ClearIcon onClick={
-            ()=>{
-              console.log("ok don" + isSearch);
-              setIsSearch(false);
-              console.log("jkk" + isSearch);
+            {
+              isSearch ?
+                <div style={{ backgroundColor: "white", borderRadius: "10px" }}>
+                  <Form className='d-flex border-0' style={{
+                    alignItems: 'center',
+                    justifyContent: 'center', border: 'none'
+                  }} onChange={() => {
+                  }}>
+
+                    <Form.Control
+                      type="text"
+                      placeholder="Search"
+                      className="flex-grow cursor-pointer border-0"
+                      aria-label="Search"
+                    />
+                    <ClearIcon onClick={
+                      () => {
+                        console.log("ok don" + isSearch);
+                        setIsSearch(false);
+                        console.log("jkk" + isSearch);
+                      }
+                    } style={{ height: '20px', width: '20px', paddingRight: '2px' }} />
+                  </Form>
+                </div> : <div style={{ width: '14rem', alignItems: "end", textAlign: 'end' }}>
+                  <SearchIcon style={{ color: "white" }} onClick={() => {
+                    console.log("checking here");
+                    setIsSearch(true);
+                    console.log("now 1" + isSearch);
+                  }} />
+                </div>
             }
-          } style={{height:'20px',width:'20px',paddingRight:'2px'}}/>
-        </Form>
-          </div>: <div style={{width:'14rem',alignItems:"end",textAlign:'end'}}>
-          <SearchIcon style={{color:"white"}}  onClick={()=>{
-              console.log("checking here");
-            setIsSearch(true);
-            console.log("now 1" + isSearch);
-          }}/>
-          </div>
-        }    
           </Nav.Link>
           <Nav.Link>
-            <AccountCircleIcon  style={{color:"white",marginLeft:"20px"}}/>
+            <AccountCircleIcon style={{ color: "white", marginLeft: "20px" }} />
           </Nav.Link>
           <Nav.Link>
-            <FavoriteBorderIcon  style={{color:"white",marginLeft:"20px"}}/>
+            <FavoriteBorderIcon style={{ color: "white", marginLeft: "20px" }} />
           </Nav.Link>
           <Nav.Link>
-            <ShoppingCartIcon  style={{color:"white",marginLeft:"20px"}}/>
+            <ShoppingCartIcon style={{ color: "white", marginLeft: "20px" }} />
           </Nav.Link>
         </Navbar.Collapse>
-        </Container>
-  </Navbar>
+      </Container>
+    </Navbar>
   );
 }
 
