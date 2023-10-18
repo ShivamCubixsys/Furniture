@@ -18,8 +18,8 @@ function App() {
      <Navibar/>
     <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/product/:Id" element={<ProductDetail/>} />
-    <Route path="/:name" element={<CategoryDetail/>} />
+    <Route path="/:category/:id" element={<ProductDetail/>} />
+    <Route path="/:category" element={<CategoryDetail/>} />
     </Routes>
   </Router>
   );

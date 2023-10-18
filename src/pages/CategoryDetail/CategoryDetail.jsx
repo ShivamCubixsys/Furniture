@@ -172,7 +172,7 @@ const CategoryDetail = (props) => {
              
             );
           })
-        }
+        } 
        <div className='buttonSectioon'>
        <Button className='applyButton' variant="outline-primary">Apply</Button>{' '}
        </div>
